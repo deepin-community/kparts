@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-14 00:14+0000\n"
+"POT-Creation-Date: 2021-12-17 00:40+0000\n"
 "PO-Revision-Date: 2011-07-25 07:45+0530\n"
 "Last-Translator: Danishka Navin <danishka@gmail.com>\n"
 "Language-Team: Sinhala <danishka@gmail.com>\n"
@@ -56,7 +56,7 @@ msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
 msgstr "මෙම පණිවිඩය යළි පෙන්වන්න එපා"
 
-#: browseropenorsavequestion.cpp:149 browseropenorsavequestion.cpp:238
+#: browseropenorsavequestion.cpp:149 browseropenorsavequestion.cpp:237
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgctxt "@label:button"
@@ -69,7 +69,7 @@ msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "Open &with %1"
 
-#: browseropenorsavequestion.cpp:224 browseropenorsavequestion.cpp:319
+#: browseropenorsavequestion.cpp:224 browseropenorsavequestion.cpp:318
 #, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
@@ -81,51 +81,51 @@ msgctxt "@label:button"
 msgid "&Open with..."
 msgstr "සමඟ විවෘත කරන්න... (&O)"
 
-#: browseropenorsavequestion.cpp:247
+#: browseropenorsavequestion.cpp:246
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "සමඟ විවෘත කරන්න... (&O)"
 
-#: browseropenorsavequestion.cpp:316
+#: browseropenorsavequestion.cpp:315
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open"
 msgstr "විවෘත කරන්න (&O)"
 
-#: browseropenorsavequestion.cpp:340
+#: browseropenorsavequestion.cpp:339
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
 msgstr "නම: %1"
 
-#: browseropenorsavequestion.cpp:342
+#: browseropenorsavequestion.cpp:341
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
 msgstr ""
 
-#: browserrun.cpp:334
+#: browserrun.cpp:333
 #, kde-format
 msgid "Do you really want to execute '%1'?"
 msgstr "ඔබට '%1' ගොනුව ක්‍රියාත්මක කිරීමට අවශ්‍යම ද?"
 
-#: browserrun.cpp:335
+#: browserrun.cpp:334
 #, kde-format
 msgid "Execute File?"
 msgstr "ගොනුව ක්‍රියාත්මක කරන්න ද?"
 
-#: browserrun.cpp:336
+#: browserrun.cpp:335
 #, kde-format
 msgid "Execute"
 msgstr "ක්‍රියාත්මක කරන්න"
 
-#: browserrun.cpp:398
+#: browserrun.cpp:397
 #, kde-format
 msgid "The Download Manager (%1) could not be found in your $PATH "
 msgstr "ඔබගේ $PATH හි බාගත කිරීමේ කළමණාකරු (%1) සොයා ගැනීමට නොහැකි විය"
 
-#: browserrun.cpp:399
+#: browserrun.cpp:398
 #, kde-format
 msgid ""
 "Try to reinstall it  \n"
@@ -136,33 +136,38 @@ msgstr ""
 "\n"
 "Konqueror සමඟ ඒකාබද්ඳ වීම අක්‍රිය වනු ඇත."
 
-#: browserrun.cpp:426
+#: browserrun.cpp:423
 #, kde-format
 msgid "Save As"
 msgstr "සුරකින අයුර"
 
 #: htmlsettingsinterface.cpp:21
-#, kde-format
 msgid "Accept"
 msgstr "අනුමත කරන්න"
 
 #: htmlsettingsinterface.cpp:23
-#, kde-format
 msgid "Reject"
 msgstr "ප්‍රතික්‍ෂේප කරන්න"
 
-#: partloader.cpp:184
+#: partloader.cpp:181
 #, fuzzy, kde-format
 #| msgid ""
 #| "The service '%1' does not provide an interface '%2' with keyword '%3'"
 msgid "The plugin '%1' does not provide an interface '%2' with keyword '%3'"
 msgstr "'%1' සේවාව '%2' '%3' යතුරු පුවරුව සමඟ අතුරුමුහුණතත් ලබා නොදේ"
 
-#: partloader.cpp:201
+#: partloader.cpp:198 partloader.h:106
 #, fuzzy, kde-format
 #| msgid "No handler found for %1."
 msgid "No part was found for mimeType %1"
 msgstr "%1 සඳහා හසුරුවනයක් හමු නොවුනි."
+
+#: partloader.h:97
+#, fuzzy, kde-format
+#| msgid ""
+#| "The service '%1' does not provide an interface '%2' with keyword '%3'"
+msgid "The plugin '%1' does not provide an interface '%2'"
+msgstr "'%1' සේවාව '%2' '%3' යතුරු පුවරුව සමඟ අතුරුමුහුණතත් ලබා නොදේ"
 
 #: readwritepart.cpp:80
 #, kde-format

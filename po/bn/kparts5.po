@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-14 00:14+0000\n"
+"POT-Creation-Date: 2021-12-17 00:40+0000\n"
 "PO-Revision-Date: 2012-07-16 14:27+0530\n"
 "Last-Translator: Deepayan Sarkar <deepayan.sarkar@gmail.com>\n"
 "Language-Team: American English <kde-translation@bengalinux.org>\n"
@@ -58,7 +58,7 @@ msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
 msgstr "এই ধরণের ফাইলের জন্য এই নিয়মটি মনে রাখো"
 
-#: browseropenorsavequestion.cpp:149 browseropenorsavequestion.cpp:238
+#: browseropenorsavequestion.cpp:149 browseropenorsavequestion.cpp:237
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
@@ -70,7 +70,7 @@ msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "%1 দিয়ে খো&ল"
 
-#: browseropenorsavequestion.cpp:224 browseropenorsavequestion.cpp:319
+#: browseropenorsavequestion.cpp:224 browseropenorsavequestion.cpp:318
 #, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
@@ -82,51 +82,51 @@ msgctxt "@label:button"
 msgid "&Open with..."
 msgstr "খুলতে ব্যবহা&র করো..."
 
-#: browseropenorsavequestion.cpp:247
+#: browseropenorsavequestion.cpp:246
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "খুলতে ব্যবহা&র করো"
 
-#: browseropenorsavequestion.cpp:316
+#: browseropenorsavequestion.cpp:315
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open"
 msgstr "খো&ল"
 
-#: browseropenorsavequestion.cpp:340
+#: browseropenorsavequestion.cpp:339
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
 msgstr "নাম: %1"
 
-#: browseropenorsavequestion.cpp:342
+#: browseropenorsavequestion.cpp:341
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
 msgstr "সার্ভার এই নামটি প্রস্তাব করেছে"
 
-#: browserrun.cpp:334
+#: browserrun.cpp:333
 #, kde-format
 msgid "Do you really want to execute '%1'?"
 msgstr "আপনি কি সত্যিই '%1' চালাতে চান?"
 
-#: browserrun.cpp:335
+#: browserrun.cpp:334
 #, kde-format
 msgid "Execute File?"
 msgstr "ফাইল চালাব?"
 
-#: browserrun.cpp:336
+#: browserrun.cpp:335
 #, kde-format
 msgid "Execute"
 msgstr "চালাও"
 
-#: browserrun.cpp:398
+#: browserrun.cpp:397
 #, kde-format
 msgid "The Download Manager (%1) could not be found in your $PATH "
 msgstr "আপনার $PATH-এ ডাউনলোড ম্যানেজার (%1) পাওয়া যায়নি"
 
-#: browserrun.cpp:399
+#: browserrun.cpp:398
 #, kde-format
 msgid ""
 "Try to reinstall it  \n"
@@ -137,31 +137,34 @@ msgstr ""
 "\n"
 "কনকরার-এর সঙ্গে যোগাযোগ নিষ্ক্রিয় করা হবে।"
 
-#: browserrun.cpp:426
+#: browserrun.cpp:423
 #, kde-format
 msgid "Save As"
 msgstr "নতুন নামে সংরক্ষণ করো"
 
 #: htmlsettingsinterface.cpp:21
-#, kde-format
 msgid "Accept"
 msgstr "স্বীকার করো"
 
 #: htmlsettingsinterface.cpp:23
-#, kde-format
 msgid "Reject"
 msgstr "অস্বীকার করো"
 
-#: partloader.cpp:184
+#: partloader.cpp:181
 #, fuzzy, kde-format
 msgid "The plugin '%1' does not provide an interface '%2' with keyword '%3'"
 msgstr "সার্ভিস '%1' মূলশব্দ '%3'এর সঙ্গে একটি ইন্টারফেস '%2' জোগান দাও না"
 
-#: partloader.cpp:201
+#: partloader.cpp:198 partloader.h:106
 #, fuzzy, kde-format
 #| msgid "No handler found for %1."
 msgid "No part was found for mimeType %1"
 msgstr "%1-এর জন্য কোন হ্যাণ্ডলার খুঁজে পাওয়া যায়নি।"
+
+#: partloader.h:97
+#, fuzzy, kde-format
+msgid "The plugin '%1' does not provide an interface '%2'"
+msgstr "সার্ভিস '%1' মূলশব্দ '%3'এর সঙ্গে একটি ইন্টারফেস '%2' জোগান দাও না"
 
 #: readwritepart.cpp:80
 #, kde-format

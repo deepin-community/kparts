@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-14 00:14+0000\n"
+"POT-Creation-Date: 2021-12-17 00:40+0000\n"
 "PO-Revision-Date: 2009-02-10 20:44+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -58,7 +58,7 @@ msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
 msgstr "ये संदेस फिर से  नइ देखाव"
 
-#: browseropenorsavequestion.cpp:149 browseropenorsavequestion.cpp:238
+#: browseropenorsavequestion.cpp:149 browseropenorsavequestion.cpp:237
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgctxt "@label:button"
@@ -72,7 +72,7 @@ msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr " '%1' एखर साथ खोलव (&O)"
 
-#: browseropenorsavequestion.cpp:224 browseropenorsavequestion.cpp:319
+#: browseropenorsavequestion.cpp:224 browseropenorsavequestion.cpp:318
 #, fuzzy, kde-format
 #| msgid "Open '%1'"
 msgctxt "@info"
@@ -86,55 +86,55 @@ msgctxt "@label:button"
 msgid "&Open with..."
 msgstr "एखर साथ खोलव...(&O)"
 
-#: browseropenorsavequestion.cpp:247
+#: browseropenorsavequestion.cpp:246
 #, fuzzy, kde-format
 #| msgid "&Open With..."
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "एखर साथ खोलव...(&O)"
 
-#: browseropenorsavequestion.cpp:316
+#: browseropenorsavequestion.cpp:315
 #, fuzzy, kde-format
 #| msgid "&Open"
 msgctxt "@label:button"
 msgid "&Open"
 msgstr "खोलव (&O)"
 
-#: browseropenorsavequestion.cpp:340
+#: browseropenorsavequestion.cpp:339
 #, fuzzy, kde-format
 #| msgid "Name: "
 msgctxt "@label File name"
 msgid "Name: %1"
 msgstr "नामः"
 
-#: browseropenorsavequestion.cpp:342
+#: browseropenorsavequestion.cpp:341
 #, fuzzy, kde-format
 #| msgid "This is the name to save the file as."
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
 msgstr "ये एखर रुप मं सहेजे जाय वाले फाइल के नाम हे."
 
-#: browserrun.cpp:334
+#: browserrun.cpp:333
 #, kde-format
 msgid "Do you really want to execute '%1'?"
 msgstr "का आप मन '%1' ल सचमुच चलाना चाहू? "
 
-#: browserrun.cpp:335
+#: browserrun.cpp:334
 #, kde-format
 msgid "Execute File?"
 msgstr "फाइल चलाव?"
 
-#: browserrun.cpp:336
+#: browserrun.cpp:335
 #, kde-format
 msgid "Execute"
 msgstr "चलाव"
 
-#: browserrun.cpp:398
+#: browserrun.cpp:397
 #, kde-format
 msgid "The Download Manager (%1) could not be found in your $PATH "
 msgstr "डाउनलोड प्रबंधक (%1) आप मन के रस्ता ($PATH ) मं खोजे नइ जा सकिस"
 
-#: browserrun.cpp:399
+#: browserrun.cpp:398
 #, kde-format
 msgid ""
 "Try to reinstall it  \n"
@@ -145,33 +145,38 @@ msgstr ""
 "\n"
 " के-कान्करर के साथ एकीकरन अक्छम रहिही."
 
-#: browserrun.cpp:426
+#: browserrun.cpp:423
 #, kde-format
 msgid "Save As"
 msgstr "अइसन सहेजव"
 
 #: htmlsettingsinterface.cpp:21
-#, kde-format
 msgid "Accept"
 msgstr "स्वीकृत"
 
 #: htmlsettingsinterface.cpp:23
-#, kde-format
 msgid "Reject"
 msgstr "अस्वीकृत"
 
-#: partloader.cpp:184
+#: partloader.cpp:181
 #, fuzzy, kde-format
 #| msgid ""
 #| "The service '%1' does not provide an interface '%2' with keyword '%3'"
 msgid "The plugin '%1' does not provide an interface '%2' with keyword '%3'"
 msgstr "सेवा '%1' इंटरफेस '%2' कुंजीसब्द '%3' के साथ प्रदाय नइ करथे "
 
-#: partloader.cpp:201
+#: partloader.cpp:198 partloader.h:106
 #, fuzzy, kde-format
 #| msgid "No handler found for %1."
 msgid "No part was found for mimeType %1"
 msgstr " %1 बर कोनो हेंडलर नइ मिलिस."
+
+#: partloader.h:97
+#, fuzzy, kde-format
+#| msgid ""
+#| "The service '%1' does not provide an interface '%2' with keyword '%3'"
+msgid "The plugin '%1' does not provide an interface '%2'"
+msgstr "सेवा '%1' इंटरफेस '%2' कुंजीसब्द '%3' के साथ प्रदाय नइ करथे "
 
 #: readwritepart.cpp:80
 #, kde-format

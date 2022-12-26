@@ -12,13 +12,13 @@
 #include <kparts/kparts_export.h>
 
 #include <QObject>
+#include <QPair>
+#include <QStringList>
+
 #include <memory>
 
-template<class T1, class T2>
-struct QPair;
 template<typename T>
 class QList;
-class QStringList;
 class QString;
 
 namespace KParts
@@ -50,7 +50,7 @@ public:
 
     LiveConnectExtension(KParts::ReadOnlyPart *parent);
 
-    virtual ~LiveConnectExtension();
+    ~LiveConnectExtension() override;
     /**
      * get a field value from objid, return true on success
      */

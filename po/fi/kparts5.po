@@ -11,7 +11,7 @@
 # Joonas Niilola <juippis@roskakori.org>, 2006.
 # Mikko Piippo <piippo@cc.helsinki.fi>, 2007.
 # Teemu Rytilahti <tpr@d5k.net>, 2008.
-# Tommi Nieminen <translator@legisign.org>, 2009, 2010, 2011, 2020.
+# Tommi Nieminen <translator@legisign.org>, 2009, 2010, 2011, 2020, 2021.
 # Jorma Karvonen <karvonen.jorma@gmail.com>, 2010.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2006, 2010, 2011, 2012, 2013, 2014, 2015.
 #
@@ -25,8 +25,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-14 00:14+0000\n"
-"PO-Revision-Date: 2020-06-22 23:14+0300\n"
+"POT-Creation-Date: 2021-12-17 00:40+0000\n"
+"PO-Revision-Date: 2021-11-23 16:45+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -79,7 +79,7 @@ msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
 msgstr "Muista toiminto tälle tiedostotyypille"
 
-#: browseropenorsavequestion.cpp:149 browseropenorsavequestion.cpp:238
+#: browseropenorsavequestion.cpp:149 browseropenorsavequestion.cpp:237
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
@@ -91,7 +91,7 @@ msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "A&vaa ohjelmalla %1"
 
-#: browseropenorsavequestion.cpp:224 browseropenorsavequestion.cpp:319
+#: browseropenorsavequestion.cpp:224 browseropenorsavequestion.cpp:318
 #, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
@@ -103,53 +103,53 @@ msgctxt "@label:button"
 msgid "&Open with..."
 msgstr "&Avaa ohjelmalla…"
 
-#: browseropenorsavequestion.cpp:247
+#: browseropenorsavequestion.cpp:246
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "&Avaa ohjelmalla"
 
-#: browseropenorsavequestion.cpp:316
+#: browseropenorsavequestion.cpp:315
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open"
 msgstr "&Avaa"
 
-#: browseropenorsavequestion.cpp:340
+#: browseropenorsavequestion.cpp:339
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
 msgstr "Nimi: %1"
 
-#: browseropenorsavequestion.cpp:342
+#: browseropenorsavequestion.cpp:341
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
 msgstr "Tämä on palvelimen ehdottama tiedostonimi"
 
-#: browserrun.cpp:334
+#: browserrun.cpp:333
 #, kde-format
 msgid "Do you really want to execute '%1'?"
 msgstr "Haluatko varmasti suorittaa %1? "
 
-#: browserrun.cpp:335
+#: browserrun.cpp:334
 #, kde-format
 msgid "Execute File?"
 msgstr "Suorita tiedosto?"
 
-#: browserrun.cpp:336
+#: browserrun.cpp:335
 #, kde-format
 msgid "Execute"
 msgstr "Suorita"
 
-#: browserrun.cpp:398
+#: browserrun.cpp:397
 #, kde-format
 msgid "The Download Manager (%1) could not be found in your $PATH "
 msgstr ""
 "Tiedostojen latauksen hallintaohjelmaa (%1) ei löytynyt $PATH -"
 "ympäristömuuttujasta"
 
-#: browserrun.cpp:399
+#: browserrun.cpp:398
 #, kde-format
 msgid ""
 "Try to reinstall it  \n"
@@ -160,30 +160,33 @@ msgstr ""
 "\n"
 "Yhteistoiminta Konquerorin kanssa poistetaan käytöstä."
 
-#: browserrun.cpp:426
+#: browserrun.cpp:423
 #, kde-format
 msgid "Save As"
 msgstr "Tallenna nimellä"
 
 #: htmlsettingsinterface.cpp:21
-#, kde-format
 msgid "Accept"
 msgstr "Hyväksy"
 
 #: htmlsettingsinterface.cpp:23
-#, kde-format
 msgid "Reject"
 msgstr "Hylkää"
 
-#: partloader.cpp:184
+#: partloader.cpp:181
 #, kde-format
 msgid "The plugin '%1' does not provide an interface '%2' with keyword '%3'"
 msgstr "Liitännäinen ”%1” ei tarjoaa liittymää ”%2”, jolla olisi hakusana ”%3”"
 
-#: partloader.cpp:201
+#: partloader.cpp:198 partloader.h:106
 #, kde-format
 msgid "No part was found for mimeType %1"
 msgstr "Osaa ei löytynyt MIME-tyypille %1"
+
+#: partloader.h:97
+#, kde-format
+msgid "The plugin '%1' does not provide an interface '%2'"
+msgstr "Liitännäinen ”%1” ei tarjoaa liittymää ”%2”"
 
 #: readwritepart.cpp:80
 #, kde-format

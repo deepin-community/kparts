@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-14 00:14+0000\n"
+"POT-Creation-Date: 2021-12-17 00:40+0000\n"
 "PO-Revision-Date: 2006-01-04 13:32+0800\n"
 "Last-Translator: Abel Cheung <abel@oaka.org>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
@@ -82,7 +82,7 @@ msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
 msgstr "不要再顯示這個訊息"
 
-#: browseropenorsavequestion.cpp:149 browseropenorsavequestion.cpp:238
+#: browseropenorsavequestion.cpp:149 browseropenorsavequestion.cpp:237
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgctxt "@label:button"
@@ -96,7 +96,7 @@ msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "開啟用 '%1'(&O)"
 
-#: browseropenorsavequestion.cpp:224 browseropenorsavequestion.cpp:319
+#: browseropenorsavequestion.cpp:224 browseropenorsavequestion.cpp:318
 #, fuzzy, kde-format
 #| msgid "Open '%1'"
 msgctxt "@info"
@@ -110,56 +110,56 @@ msgctxt "@label:button"
 msgid "&Open with..."
 msgstr "開啟用(&O)..."
 
-#: browseropenorsavequestion.cpp:247
+#: browseropenorsavequestion.cpp:246
 #, fuzzy, kde-format
 #| msgid "&Open With..."
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "開啟用(&O)..."
 
-#: browseropenorsavequestion.cpp:316
+#: browseropenorsavequestion.cpp:315
 #, fuzzy, kde-format
 #| msgid "&Open"
 msgctxt "@label:button"
 msgid "&Open"
 msgstr "開啟(&O)"
 
-#: browseropenorsavequestion.cpp:340
+#: browseropenorsavequestion.cpp:339
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@label File name"
 msgid "Name: %1"
 msgstr "名稱："
 
-#: browseropenorsavequestion.cpp:342
+#: browseropenorsavequestion.cpp:341
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
 msgstr ""
 
-#: browserrun.cpp:334
+#: browserrun.cpp:333
 #, fuzzy, kde-format
 #| msgid "Do you really want to execute '%1'? "
 msgid "Do you really want to execute '%1'?"
 msgstr "你真的要執行‘%1’？"
 
-#: browserrun.cpp:335
+#: browserrun.cpp:334
 #, kde-format
 msgid "Execute File?"
 msgstr "執行檔案嗎？"
 
-#: browserrun.cpp:336
+#: browserrun.cpp:335
 #, kde-format
 msgid "Execute"
 msgstr "執行"
 
-#: browserrun.cpp:398
+#: browserrun.cpp:397
 #, kde-format
 msgid "The Download Manager (%1) could not be found in your $PATH "
 msgstr ""
 "找不到下載管理程式 (%1)，請檢查你的安裝是否正確，包含 PATH 路徑有設定正確。"
 
-#: browserrun.cpp:399
+#: browserrun.cpp:398
 #, fuzzy, kde-format
 msgid ""
 "Try to reinstall it  \n"
@@ -170,30 +170,33 @@ msgstr ""
 "\n"
 "與 Konqueror 的整合將被停用！"
 
-#: browserrun.cpp:426
+#: browserrun.cpp:423
 #, kde-format
 msgid "Save As"
 msgstr "另存新檔"
 
 #: htmlsettingsinterface.cpp:21
-#, kde-format
 msgid "Accept"
 msgstr "接受"
 
 #: htmlsettingsinterface.cpp:23
-#, kde-format
 msgid "Reject"
 msgstr "拒絕"
 
-#: partloader.cpp:184
+#: partloader.cpp:181
 #, kde-format
 msgid "The plugin '%1' does not provide an interface '%2' with keyword '%3'"
 msgstr ""
 
-#: partloader.cpp:201
+#: partloader.cpp:198 partloader.h:106
 #, fuzzy, kde-format
 msgid "No part was found for mimeType %1"
 msgstr "找不到給 %1 用的處理器項目!"
+
+#: partloader.h:97
+#, kde-format
+msgid "The plugin '%1' does not provide an interface '%2'"
+msgstr ""
 
 #: readwritepart.cpp:80
 #, kde-format

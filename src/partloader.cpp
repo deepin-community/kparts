@@ -10,8 +10,6 @@
 #include "kparts_logging.h"
 
 #include <KConfigGroup>
-#include <KLocalizedString>
-#include <KPluginFactory>
 #include <KPluginLoader>
 #include <KService>
 #include <KSharedConfig>
@@ -81,7 +79,7 @@ QVector<KPluginMetaData> KParts::PartLoader::partsForMimeType(const QString &mim
     auto supportsMime = [&](const KPluginMetaData &md) {
         return md.supportsMimeType(mimeType);
     };
-    QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kf5/parts"), supportsMime);
+    QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("kf5/parts"), supportsMime);
 
 #if KSERVICE_BUILD_DEPRECATED_SINCE(5, 0)
     // KF5 compat code
@@ -94,19 +92,19 @@ QVector<KPluginMetaData> KParts::PartLoader::partsForMimeType(const QString &mim
         };
     };
 
+    QT_WARNING_PUSH
+    QT_WARNING_DISABLE_CLANG("-Wdeprecated-declarations")
+    QT_WARNING_DISABLE_GCC("-Wdeprecated-declarations")
     const KService::List offers = KMimeTypeTrader::self()->query(mimeType, QStringLiteral("KParts/ReadOnlyPart"));
     for (const KService::Ptr &service : offers) {
-        QT_WARNING_PUSH
-        QT_WARNING_DISABLE_CLANG("-Wdeprecated-declarations")
-        QT_WARNING_DISABLE_GCC("-Wdeprecated-declarations")
         KPluginInfo info(service);
-        QT_WARNING_POP
         if (info.isValid()) {
             if (std::find_if(plugins.cbegin(), plugins.cend(), isPluginForName(info.name())) == plugins.cend()) {
                 plugins.append(info.toMetaData());
             }
         }
     }
+    QT_WARNING_POP
 #endif
 
     auto orderPredicate = [&](const KPluginMetaData &left, const KPluginMetaData &right) {
@@ -152,7 +150,7 @@ QVector<KPluginMetaData> KParts::PartLoader::partsForMimeType(const QString &mim
     return plugins;
 }
 
-// KF6 TODO: make create(const char* iface...) public in KPluginFactory, remove this hack
+#if KPARTS_BUILD_DEPRECATED_SINCE(5, 88)
 class KPluginFactoryHack : public KPluginFactory
 {
 public:
@@ -168,13 +166,12 @@ QObject *KParts::PartLoader::Private::createPartInstanceForMimeTypeHelper(const 
                                                                           QObject *parent,
                                                                           QString *error)
 {
+    QT_WARNING_PUSH
+    QT_WARNING_DISABLE_CLANG("-Wdeprecated-declarations")
+    QT_WARNING_DISABLE_GCC("-Wdeprecated-declarations")
     const QVector<KPluginMetaData> plugins = KParts::PartLoader::partsForMimeType(mimeType);
     for (const KPluginMetaData &plugin : plugins) {
         KPluginLoader pluginLoader(plugin.fileName());
-        // ## How can the keyword feature work with JSON metadata?
-        // ## Several desktop files could point to the same .so file, but a .so file only has one metadata builtin.
-        // ## Unlikely to be a problem here (multiple KParts in the same .so file?), but to be solved for KCMs with an array of "KPlugin" in the JSON file...
-        // ## It would then be used by KPluginLoader::findPlugins, and we'd use plugin.keyword() here.
         const QString pluginKeyword;
         KPluginFactory *factory = pluginLoader.factory();
         if (factory) {
@@ -201,4 +198,6 @@ QObject *KParts::PartLoader::Private::createPartInstanceForMimeTypeHelper(const 
         *error = i18n("No part was found for mimeType %1", mimeType);
     }
     return nullptr;
+    QT_WARNING_POP
 }
+#endif

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde4libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-14 00:14+0000\n"
+"POT-Creation-Date: 2021-12-17 00:40+0000\n"
 "PO-Revision-Date: 2012-01-19 00:20-0500\n"
 "Last-Translator: Agron Selimaj <as9902613@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -55,7 +55,7 @@ msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
 msgstr ""
 
-#: browseropenorsavequestion.cpp:149 browseropenorsavequestion.cpp:238
+#: browseropenorsavequestion.cpp:149 browseropenorsavequestion.cpp:237
 #, fuzzy, kde-format
 #| msgid "Open '%1'"
 msgctxt "@label:button"
@@ -69,7 +69,7 @@ msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "Hape '%1'"
 
-#: browseropenorsavequestion.cpp:224 browseropenorsavequestion.cpp:319
+#: browseropenorsavequestion.cpp:224 browseropenorsavequestion.cpp:318
 #, fuzzy, kde-format
 #| msgid "Open '%1'"
 msgctxt "@info"
@@ -83,54 +83,54 @@ msgctxt "@label:button"
 msgid "&Open with..."
 msgstr "&Hape..."
 
-#: browseropenorsavequestion.cpp:247
+#: browseropenorsavequestion.cpp:246
 #, fuzzy, kde-format
 #| msgid "Open Script"
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "Hap Skriptin"
 
-#: browseropenorsavequestion.cpp:316
+#: browseropenorsavequestion.cpp:315
 #, fuzzy, kde-format
 #| msgid "Open"
 msgctxt "@label:button"
 msgid "&Open"
 msgstr "Hape"
 
-#: browseropenorsavequestion.cpp:340
+#: browseropenorsavequestion.cpp:339
 #, fuzzy, kde-format
 #| msgid "Name: "
 msgctxt "@label File name"
 msgid "Name: %1"
 msgstr "Emri: "
 
-#: browseropenorsavequestion.cpp:342
+#: browseropenorsavequestion.cpp:341
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
 msgstr ""
 
-#: browserrun.cpp:334
+#: browserrun.cpp:333
 #, kde-format
 msgid "Do you really want to execute '%1'?"
 msgstr ""
 
-#: browserrun.cpp:335
+#: browserrun.cpp:334
 #, kde-format
 msgid "Execute File?"
 msgstr "Ta Ekzekutojmë Skedarin?"
 
-#: browserrun.cpp:336
+#: browserrun.cpp:335
 #, kde-format
 msgid "Execute"
 msgstr "Ekzekuto"
 
-#: browserrun.cpp:398
+#: browserrun.cpp:397
 #, kde-format
 msgid "The Download Manager (%1) could not be found in your $PATH "
 msgstr "Menaxhuesi i Shkarkimeve (%1) nuk mund të gjendet në $PATH "
 
-#: browserrun.cpp:399
+#: browserrun.cpp:398
 #, kde-format
 msgid ""
 "Try to reinstall it  \n"
@@ -138,31 +138,34 @@ msgid ""
 "The integration with Konqueror will be disabled."
 msgstr ""
 
-#: browserrun.cpp:426
+#: browserrun.cpp:423
 #, kde-format
 msgid "Save As"
 msgstr "Ruaje Si"
 
 #: htmlsettingsinterface.cpp:21
-#, kde-format
 msgid "Accept"
 msgstr "Prano"
 
 #: htmlsettingsinterface.cpp:23
-#, kde-format
 msgid "Reject"
 msgstr "Refuzo"
 
-#: partloader.cpp:184
+#: partloader.cpp:181
 #, kde-format
 msgid "The plugin '%1' does not provide an interface '%2' with keyword '%3'"
 msgstr ""
 
-#: partloader.cpp:201
+#: partloader.cpp:198 partloader.h:106
 #, fuzzy, kde-format
 #| msgid "No matches found for '<b>%1</b>'."
 msgid "No part was found for mimeType %1"
 msgstr "Nuk u gjetën përputhje për '<b>%1</b>'."
+
+#: partloader.h:97
+#, kde-format
+msgid "The plugin '%1' does not provide an interface '%2'"
+msgstr ""
 
 #: readwritepart.cpp:80
 #, kde-format

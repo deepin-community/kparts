@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-14 00:14+0000\n"
+"POT-Creation-Date: 2021-12-17 00:40+0000\n"
 "PO-Revision-Date: 2008-08-30 01:10+0300\n"
 "Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
 "Language-Team: Belarusian Latin <i18n@mova.org>\n"
@@ -58,7 +58,7 @@ msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
 msgstr "&Hetym razam nie zachoŭvaj"
 
-#: browseropenorsavequestion.cpp:149 browseropenorsavequestion.cpp:238
+#: browseropenorsavequestion.cpp:149 browseropenorsavequestion.cpp:237
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgctxt "@label:button"
@@ -72,7 +72,7 @@ msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "&Adčyni ŭ „%1”"
 
-#: browseropenorsavequestion.cpp:224 browseropenorsavequestion.cpp:319
+#: browseropenorsavequestion.cpp:224 browseropenorsavequestion.cpp:318
 #, fuzzy, kde-format
 #| msgid "Open '%1'"
 msgctxt "@info"
@@ -86,56 +86,56 @@ msgctxt "@label:button"
 msgid "&Open with..."
 msgstr "&Adčyni ŭ..."
 
-#: browseropenorsavequestion.cpp:247
+#: browseropenorsavequestion.cpp:246
 #, fuzzy, kde-format
 #| msgid "&Open with..."
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "&Adčyni ŭ..."
 
-#: browseropenorsavequestion.cpp:316
+#: browseropenorsavequestion.cpp:315
 #, fuzzy, kde-format
 #| msgid "&Open"
 msgctxt "@label:button"
 msgid "&Open"
 msgstr "&Adčyni"
 
-#: browseropenorsavequestion.cpp:340
+#: browseropenorsavequestion.cpp:339
 #, fuzzy, kde-format
 #| msgid "Name: "
 msgctxt "@label File name"
 msgid "Name: %1"
 msgstr "Nazva: "
 
-#: browseropenorsavequestion.cpp:342
+#: browseropenorsavequestion.cpp:341
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
 msgstr ""
 
-#: browserrun.cpp:334
+#: browserrun.cpp:333
 #, kde-format
 msgid "Do you really want to execute '%1'?"
 msgstr "Ty sapraŭdy chočaš vykanać „%1”?"
 
-#: browserrun.cpp:335
+#: browserrun.cpp:334
 #, kde-format
 msgid "Execute File?"
 msgstr "Vykanać fajł?"
 
-#: browserrun.cpp:336
+#: browserrun.cpp:335
 #, kde-format
 msgid "Execute"
 msgstr "Vykanaj"
 
-#: browserrun.cpp:398
+#: browserrun.cpp:397
 #, kde-format
 msgid "The Download Manager (%1) could not be found in your $PATH "
 msgstr ""
 "U tvajoj ściežcy „$PATH” nie ŭdałosia znajści kiraŭnika ściahvańniaŭ fajłaŭ "
 "(%1)."
 
-#: browserrun.cpp:399
+#: browserrun.cpp:398
 #, kde-format
 msgid ""
 "Try to reinstall it  \n"
@@ -146,32 +146,37 @@ msgstr ""
 "\n"
 "Intehravanaść z aplikacyjaj „Konqueror” vyklučanaja."
 
-#: browserrun.cpp:426
+#: browserrun.cpp:423
 #, kde-format
 msgid "Save As"
 msgstr "Zapišy jak"
 
 #: htmlsettingsinterface.cpp:21
-#, kde-format
 msgid "Accept"
 msgstr "Pryjmi"
 
 #: htmlsettingsinterface.cpp:23
-#, kde-format
 msgid "Reject"
 msgstr "Adkiń"
 
-#: partloader.cpp:184
+#: partloader.cpp:181
 #, fuzzy, kde-format
 #| msgid ""
 #| "The service '%1' does not provide an interface '%2' with keyword '%3'"
 msgid "The plugin '%1' does not provide an interface '%2' with keyword '%3'"
 msgstr "Słužba „%1” nie padaje interfejsu „%2” z klučavym słovam „%3”."
 
-#: partloader.cpp:201
+#: partloader.cpp:198 partloader.h:106
 #, kde-format
 msgid "No part was found for mimeType %1"
 msgstr ""
+
+#: partloader.h:97
+#, fuzzy, kde-format
+#| msgid ""
+#| "The service '%1' does not provide an interface '%2' with keyword '%3'"
+msgid "The plugin '%1' does not provide an interface '%2'"
+msgstr "Słužba „%1” nie padaje interfejsu „%2” z klučavym słovam „%3”."
 
 #: readwritepart.cpp:80
 #, kde-format

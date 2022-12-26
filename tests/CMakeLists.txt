@@ -1,11 +1,11 @@
-find_package(Qt5Test ${REQUIRED_QT_VERSION} REQUIRED)
-set_package_properties(Qt5Test PROPERTIES PURPOSE "Required for tests")
+find_package(Qt${QT_MAJOR_VERSION}Test ${REQUIRED_QT_VERSION} REQUIRED)
+set_package_properties(Qt${QT_MAJOR_VERSION}Test PROPERTIES PURPOSE "Required for tests")
 
 include(ECMMarkAsTest)
 
 add_library(parts_test_interface INTERFACE)
 target_link_libraries(parts_test_interface INTERFACE
-    Qt5::Test KF5::Parts KF5::CoreAddons KF5::I18n KF5::XmlGui KF5::KIOCore
+    Qt${QT_MAJOR_VERSION}::Test KF5::Parts KF5::CoreAddons KF5::I18n KF5::XmlGui KF5::KIOCore
 )
 
 add_executable(kpartstest testmainwindow.cpp parts.cpp)
@@ -19,9 +19,12 @@ target_link_libraries(normalktmtest parts_test_interface)
 
 ########### next target ###############
 
-add_library(spellcheckplugin MODULE plugin_spellcheck.cpp)
-target_link_libraries(spellcheckplugin parts_test_interface )
-install(TARGETS spellcheckplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
+if(NOT EXCLUDE_DEPRECATED_BEFORE_AND_AT STREQUAL "CURRENT" AND
+   EXCLUDE_DEPRECATED_BEFORE_AND_AT VERSION_LESS 5.90.0)
+    add_library(spellcheckplugin MODULE plugin_spellcheck.cpp)
+    target_link_libraries(spellcheckplugin parts_test_interface )
+    install(TARGETS spellcheckplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
+endif()
 
 ########### unit tests ###############
 

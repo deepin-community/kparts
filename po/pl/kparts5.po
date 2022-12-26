@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-14 00:14+0000\n"
-"PO-Revision-Date: 2021-01-23 07:27+0100\n"
+"POT-Creation-Date: 2021-12-17 00:40+0000\n"
+"PO-Revision-Date: 2021-10-24 09:15+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -149,7 +149,7 @@ msgctxt "@label:checkbox"
 msgid "Remember action for files of this type"
 msgstr "Zapamiętaj działanie dla plików tego typu"
 
-#: browseropenorsavequestion.cpp:149 browseropenorsavequestion.cpp:238
+#: browseropenorsavequestion.cpp:149 browseropenorsavequestion.cpp:237
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with %1"
@@ -161,7 +161,7 @@ msgctxt "@action:inmenu"
 msgid "Open &with %1"
 msgstr "Otwórz &w %1"
 
-#: browseropenorsavequestion.cpp:224 browseropenorsavequestion.cpp:319
+#: browseropenorsavequestion.cpp:224 browseropenorsavequestion.cpp:318
 #, kde-format
 msgctxt "@info"
 msgid "Open '%1'?"
@@ -173,52 +173,52 @@ msgctxt "@label:button"
 msgid "&Open with..."
 msgstr "Otwórz &w..."
 
-#: browseropenorsavequestion.cpp:247
+#: browseropenorsavequestion.cpp:246
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open with"
 msgstr "Otwórz &w"
 
-#: browseropenorsavequestion.cpp:316
+#: browseropenorsavequestion.cpp:315
 #, kde-format
 msgctxt "@label:button"
 msgid "&Open"
 msgstr "&Otwórz"
 
-#: browseropenorsavequestion.cpp:340
+#: browseropenorsavequestion.cpp:339
 #, kde-format
 msgctxt "@label File name"
 msgid "Name: %1"
 msgstr "Nazwa: %1"
 
-#: browseropenorsavequestion.cpp:342
+#: browseropenorsavequestion.cpp:341
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is the file name suggested by the server"
 msgstr "To jest nazwa pliku zaproponowana przez serwer"
 
-#: browserrun.cpp:334
+#: browserrun.cpp:333
 #, kde-format
 msgid "Do you really want to execute '%1'?"
 msgstr "Na pewno wykonać '%1'?"
 
-#: browserrun.cpp:335
+#: browserrun.cpp:334
 #, kde-format
 msgid "Execute File?"
 msgstr "Wykonać plik?"
 
-#: browserrun.cpp:336
+#: browserrun.cpp:335
 #, kde-format
 msgid "Execute"
 msgstr "Wykonaj"
 
-#: browserrun.cpp:398
+#: browserrun.cpp:397
 #, kde-format
 msgid "The Download Manager (%1) could not be found in your $PATH "
 msgstr ""
 "Nie można znaleźć programu do zarządzania pobieraniem (%1) w ścieżce $PATH"
 
-#: browserrun.cpp:399
+#: browserrun.cpp:398
 #, kde-format
 msgid ""
 "Try to reinstall it  \n"
@@ -229,30 +229,33 @@ msgstr ""
 "\n"
 "Integracja z Konquerorem została wyłączona."
 
-#: browserrun.cpp:426
+#: browserrun.cpp:423
 #, kde-format
 msgid "Save As"
 msgstr "Zapisz jako"
 
 #: htmlsettingsinterface.cpp:21
-#, kde-format
 msgid "Accept"
 msgstr "Przyjmij"
 
 #: htmlsettingsinterface.cpp:23
-#, kde-format
 msgid "Reject"
 msgstr "Odrzuć"
 
-#: partloader.cpp:184
+#: partloader.cpp:181
 #, kde-format
 msgid "The plugin '%1' does not provide an interface '%2' with keyword '%3'"
 msgstr "Wtyczka '%1' nie udostępnia interfejsu '%2' ze słowem kluczowym '%3'"
 
-#: partloader.cpp:201
+#: partloader.cpp:198 partloader.h:106
 #, kde-format
 msgid "No part was found for mimeType %1"
 msgstr "Nie znaleziono części dla typu mime %1"
+
+#: partloader.h:97
+#, kde-format
+msgid "The plugin '%1' does not provide an interface '%2'"
+msgstr "Wtyczka '%1' nie udostępnia interfejsu '%2'"
 
 #: readwritepart.cpp:80
 #, kde-format

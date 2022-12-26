@@ -8,6 +8,8 @@
 #ifndef KPARTS_PARTLOADER_H
 #define KPARTS_PARTLOADER_H
 
+#include <KLocalizedString>
+#include <KPluginFactory>
 #include <KPluginMetaData>
 #include <QObject>
 #include <QVector>
@@ -24,6 +26,7 @@ namespace KParts
  */
 namespace PartLoader
 {
+#if KPARTS_ENABLE_DEPRECATED_SINCE(5, 88)
 namespace Private
 {
 /**
@@ -32,6 +35,7 @@ namespace Private
  */
 KPARTS_EXPORT QObject *createPartInstanceForMimeTypeHelper(const char *iface, const QString &mimeType, QWidget *parentWidget, QObject *parent, QString *error);
 }
+#endif
 
 /**
  * Locate all available KParts for a mimetype.
@@ -39,7 +43,7 @@ KPARTS_EXPORT QObject *createPartInstanceForMimeTypeHelper(const char *iface, co
  * This takes care both of the builtin preference (set by developers)
  * and of user preference (stored in mimeapps.list).
  *
- * This uses KPluginLoader::findPlugins, i.e. it requires the parts to
+ * This uses KPluginMetaData::findPlugins, i.e. it requires the parts to
  * provide the metadata as JSON embedded into the plugin.
  * Until KF6, however, it also supports .desktop files as a fallback solution.
  *
@@ -83,12 +87,25 @@ KPARTS_EXPORT QVector<KPluginMetaData> partsForMimeType(const QString &mimeType)
 template<class T>
 static T *createPartInstanceForMimeType(const QString &mimeType, QWidget *parentWidget = nullptr, QObject *parent = nullptr, QString *error = nullptr)
 {
-    QObject *o = Private::createPartInstanceForMimeTypeHelper(T::staticMetaObject.className(), mimeType, parentWidget, parent, error);
-    T *part = qobject_cast<T *>(o);
-    if (!part) {
-        delete o;
+    const QVector<KPluginMetaData> plugins = KParts::PartLoader::partsForMimeType(mimeType);
+    for (const auto &plugin : plugins) {
+        auto factory = KPluginFactory::loadFactory(plugin);
+        if (factory) {
+            if (T *part = factory.plugin->create<T>(parentWidget, parent, QVariantList())) {
+                return part;
+            } else if (error) {
+                *error = i18n("The plugin '%1' does not provide an interface '%2'", //
+                              plugin.fileName(),
+                              QLatin1String(T::staticMetaObject.className()));
+            }
+        } else if (error) {
+            *error = factory.errorString;
+        }
     }
-    return part;
+    if (error && error->isEmpty()) {
+        *error = i18n("No part was found for mimeType %1", mimeType);
+    }
+    return nullptr;
 }
 
 } // namespace
