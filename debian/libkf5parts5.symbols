@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 5.70.0 amd64
+# SymbolsHelper-Confirmed: 5.103.0 amd64
 libKF5Parts.so.5 libkf5parts5 #MINVER#
 * Build-Depends-Package: libkf5parts-dev
  _ZN6KParts10BrowserRun10simpleSaveERK4QUrlRK7QStringP7QWidget@Base 4.96.0
@@ -44,6 +44,7 @@ libKF5Parts.so.5 libkf5parts5 #MINVER#
  _ZN6KParts10MainWindowD1Ev@Base 4.96.0
  _ZN6KParts10MainWindowD2Ev@Base 4.96.0
  _ZN6KParts10PartLoader16partsForMimeTypeERK7QString@Base 5.69.0
+ _ZN6KParts10PartLoader7Private15getErrorStringsEP7QStringS3_RKS2_NS1_9ErrorTypeE@Base 5.103.0
  _ZN6KParts10PartLoader7Private35createPartInstanceForMimeTypeHelperEPKcRK7QStringP7QWidgetP7QObjectPS4_@Base 5.69.0
  _ZN6KParts10WindowArgs12setResizableEb@Base 4.96.0
  _ZN6KParts10WindowArgs13setFullScreenEb@Base 4.96.0

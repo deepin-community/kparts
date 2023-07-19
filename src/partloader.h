@@ -8,7 +8,6 @@
 #ifndef KPARTS_PARTLOADER_H
 #define KPARTS_PARTLOADER_H
 
-#include <KLocalizedString>
 #include <KPluginFactory>
 #include <KPluginMetaData>
 #include <QObject>
@@ -19,23 +18,38 @@ namespace KParts
 {
 /**
  * Helper methods for locating and loading parts.
- * This is based upon KPluginLoader and KPluginFactory, but it takes
+ * This is based upon KPluginFactory, but it takes
  * care of querying by mimetype, sorting the available parts by builtin
  * preference and by user preference.
  * @since 5.69
  */
 namespace PartLoader
 {
-#if KPARTS_ENABLE_DEPRECATED_SINCE(5, 88)
 namespace Private
 {
+
+enum ErrorType {
+    CouldNotLoadPlugin,
+    NoPartFoundForMimeType,
+    NoPartInstantiatedForMimeType,
+};
+
+/**
+ * @internal
+ * @param errorString translated, user-visible error string
+ * @param errorText untranslated error text
+ * @param argument argument for the text
+ */
+KPARTS_EXPORT void getErrorStrings(QString *errorString, QString *errorText, const QString &argument, ErrorType type);
+
+#if KPARTS_ENABLE_DEPRECATED_SINCE(5, 88)
 /**
  * Helper for PartLoader::createPartInstanceForMimeType<T>
  * @internal
  */
 KPARTS_EXPORT QObject *createPartInstanceForMimeTypeHelper(const char *iface, const QString &mimeType, QWidget *parentWidget, QObject *parent, QString *error);
-}
 #endif
+}
 
 /**
  * Locate all available KParts for a mimetype.
@@ -48,15 +62,112 @@ KPARTS_EXPORT QObject *createPartInstanceForMimeTypeHelper(const char *iface, co
  * Until KF6, however, it also supports .desktop files as a fallback solution.
  *
  * To load a part from one of the KPluginMetaData instances returned here,
- * simply do
- * @code
- *     KPluginLoader loader(metaData.fileName());
- *     m_part = loader.factory()->create<KParts::ReadOnlyPart>(parentWidget, parent);
- * @endcode
+ * use \ref instantiatePart()
  *
  * @since 5.69
  */
 KPARTS_EXPORT QVector<KPluginMetaData> partsForMimeType(const QString &mimeType);
+
+/**
+ * Attempts to create a KPart from the given metadata.
+ *
+ * @code
+ * KPluginFactory::Result<MyPart> result = KParts::PartLoader::instantiatePart<MyPart>(metaData, parentWidget, parent, args);
+ * if (result) {
+ *     // result.plugin is valid and can be accessed
+ * } else {
+ *     // result contains information about the error
+ * }
+ * @endcode
+ * If there is no extra error handling needed the plugin can be directly accessed and checked if it is a nullptr
+ * @code
+ * if (auto plugin = KParts::PartLoader::instantiatePart<MyPart>(metaData, parentWidget, parent, args).plugin) {
+ *     // The plugin is valid and can be accessed
+ * }
+ * @endcode
+ * @param data KPluginMetaData from which the plugin should be loaded
+ * @param parentWidget The parent widget
+ * @param parent The parent object
+ * @param args A list of arguments to be passed to the part
+ * @return Result object which contains the plugin instance and potentially error information
+ * @since 5.100
+ */
+template<typename T>
+static KPluginFactory::Result<T>
+instantiatePart(const KPluginMetaData &data, QWidget *parentWidget = nullptr, QObject *parent = nullptr, const QVariantList &args = {})
+{
+    KPluginFactory::Result<T> result;
+    KPluginFactory::Result<KPluginFactory> factoryResult = KPluginFactory::loadFactory(data);
+    if (!factoryResult.plugin) {
+        result.errorString = factoryResult.errorString;
+        result.errorReason = factoryResult.errorReason;
+        return result;
+    }
+    T *instance = factoryResult.plugin->create<T>(parentWidget, parent, args);
+    if (!instance) {
+        const QString fileName = data.fileName();
+        Private::getErrorStrings(&result.errorString, &result.errorText, fileName, Private::CouldNotLoadPlugin);
+        result.errorReason = KPluginFactory::INVALID_KPLUGINFACTORY_INSTANTIATION;
+    } else {
+        result.plugin = instance;
+    }
+    return result;
+}
+
+/**
+ * Use this method to create a KParts part. It will try to create an object which inherits
+ * @param T.
+ *
+ * @code
+ * KPluginFactory::Result<KParts::ReadOnlyPart> result = KParts::PartLoader::instantiatePartForMimeType<KParts::ReadOnlyPart>(mimeType, parentWidget, parent,
+ * args);
+ * if (result) {
+ *     // result.plugin is valid and can be accessed
+ * } else {
+ *     // result contains information about the error
+ * }
+ * @endcode
+ * If there is no extra error handling needed the plugin can be directly accessed and checked if it is a nullptr
+ * @code
+ * if (auto plugin = KParts::PartLoader::instantiatePartForMimeType<KParts::ReadOnlyPart>(mimeType, parentWidget, parent, args).plugin) {
+ *     // The plugin is valid and can be accessed
+ * }
+ *
+ * @tparam T The interface for which an object should be created. The object will inherit @param T.
+ * @param mimeType The mimetype for which we need a KParts.
+ * @param parentWidget The parent widget for the part's widget.
+ * @param parent The parent of the part.
+ * @return Result object which contains the plugin instance and potentially error information
+ * @since 5.100
+ */
+template<class T>
+static KPluginFactory::Result<T>
+instantiatePartForMimeType(const QString &mimeType, QWidget *parentWidget = nullptr, QObject *parent = nullptr, const QVariantList &args = {})
+{
+    const QVector<KPluginMetaData> plugins = KParts::PartLoader::partsForMimeType(mimeType);
+
+    if (plugins.isEmpty()) {
+        KPluginFactory::Result<T> errorResult;
+        errorResult.errorReason = KPluginFactory::ResultErrorReason::INVALID_PLUGIN;
+        Private::getErrorStrings(&errorResult.errorString, &errorResult.errorText, mimeType, Private::NoPartFoundForMimeType);
+
+        return errorResult;
+    }
+
+    for (const KPluginMetaData &plugin : plugins) {
+        const KPluginFactory::Result<T> result = instantiatePart<T>(plugin, parentWidget, parent, args);
+
+        if (result) {
+            return result;
+        }
+    }
+
+    KPluginFactory::Result<T> errorResult;
+    errorResult.errorReason = KPluginFactory::ResultErrorReason::INVALID_PLUGIN;
+    Private::getErrorStrings(&errorResult.errorString, &errorResult.errorText, mimeType, Private::NoPartInstantiatedForMimeType);
+
+    return errorResult;
+}
 
 /**
  * Use this method to create a KParts part. It will try to create an object which inherits
@@ -87,24 +198,14 @@ KPARTS_EXPORT QVector<KPluginMetaData> partsForMimeType(const QString &mimeType)
 template<class T>
 static T *createPartInstanceForMimeType(const QString &mimeType, QWidget *parentWidget = nullptr, QObject *parent = nullptr, QString *error = nullptr)
 {
-    const QVector<KPluginMetaData> plugins = KParts::PartLoader::partsForMimeType(mimeType);
-    for (const auto &plugin : plugins) {
-        auto factory = KPluginFactory::loadFactory(plugin);
-        if (factory) {
-            if (T *part = factory.plugin->create<T>(parentWidget, parent, QVariantList())) {
-                return part;
-            } else if (error) {
-                *error = i18n("The plugin '%1' does not provide an interface '%2'", //
-                              plugin.fileName(),
-                              QLatin1String(T::staticMetaObject.className()));
-            }
-        } else if (error) {
-            *error = factory.errorString;
-        }
+    const KPluginFactory::Result<T> result = instantiatePartForMimeType<T>(mimeType, parentWidget, parent, {});
+
+    if (result) {
+        return result.plugin;
     }
-    if (error && error->isEmpty()) {
-        *error = i18n("No part was found for mimeType %1", mimeType);
-    }
+
+    *error = result.errorString;
+
     return nullptr;
 }
 

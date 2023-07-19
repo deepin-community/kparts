@@ -2,21 +2,21 @@
 #
 # Gaute Hvoslef Kvalnes <gaute@verdsveven.com>, 2003, 2004, 2005, 2006.
 # Håvard Korsvoll <korsvoll@skulelinux.no>, 2003, 2005.
-# Karl Ove Hufthammer <karl@huftis.org>, 2004, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2020.
+# Karl Ove Hufthammer <karl@huftis.org>, 2004, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2020, 2022.
 # Eirik U. Birkeland <eirbir@gmail.com>, 2008, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-12-17 00:40+0000\n"
-"PO-Revision-Date: 2020-04-02 20:55+0200\n"
+"POT-Creation-Date: 2023-01-24 00:54+0000\n"
+"PO-Revision-Date: 2022-10-30 09:41+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
+"X-Generator: Lokalize 22.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
@@ -151,21 +151,26 @@ msgstr "Godta"
 msgid "Reject"
 msgstr "Avvis"
 
-#: partloader.cpp:181
+#: partloader.cpp:158
 #, kde-format
-msgid "The plugin '%1' does not provide an interface '%2' with keyword '%3'"
+msgid "KPluginFactory could not load the plugin: %1"
 msgstr ""
-"Programtillegget «%1» har ikkje noko grensesnitt «%2» med nøkkelord «%3»"
 
-#: partloader.cpp:198 partloader.h:106
+#: partloader.cpp:162 partloader.cpp:220
 #, kde-format
 msgid "No part was found for mimeType %1"
 msgstr "Fann ingen del for MIME-typen %1"
 
-#: partloader.h:97
+#: partloader.cpp:166
 #, kde-format
-msgid "The plugin '%1' does not provide an interface '%2'"
+msgid "No part could be instantiated for mimeType %1"
+msgstr "Klate ikkje å instantiera del for MIME-typen %1"
+
+#: partloader.cpp:203
+#, kde-format
+msgid "The plugin '%1' does not provide an interface '%2' with keyword '%3'"
 msgstr ""
+"Programtillegget «%1» har ikkje noko grensesnitt «%2» med nøkkelord «%3»"
 
 #: readwritepart.cpp:80
 #, kde-format
