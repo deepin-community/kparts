@@ -116,7 +116,7 @@ void BrowserRun::scanFile()
 
     if (!KProtocolInfo::proxiedBy(protocol).isEmpty()) {
         QString dummy;
-        protocol = KProtocolManager::slaveProtocol(url, dummy);
+        protocol = KProtocolManager::workerProtocol(url, dummy);
     }
 
     if (!url.hasQuery() && !protocol.startsWith(QLatin1String("http")) && (!url.path().endsWith(QLatin1Char('/')) || KProtocolManager::supportsListing(url))) {
@@ -346,8 +346,8 @@ BrowserRun::AskSaveResult BrowserRun::askSave(const QUrl &url, KService::Ptr off
     const BrowserOpenOrSaveQuestion::Result result = question.askOpenOrSave();
     // clang-format off
     return result == BrowserOpenOrSaveQuestion::Save ? Save
-           : BrowserOpenOrSaveQuestion::Open ? Open
-           : Cancel;
+           : (result == BrowserOpenOrSaveQuestion::Open ? Open
+           : Cancel);
     // clang-format on
 }
 #endif
@@ -396,7 +396,7 @@ void KParts::BrowserRun::saveUrl(const QUrl &url, const QString &suggestedFileNa
             if (QStandardPaths::findExecutable(downloadManager).isEmpty()) {
                 QString errMsg = i18n("The Download Manager (%1) could not be found in your $PATH ", downloadManager);
                 QString errMsgEx = i18n("Try to reinstall it  \n\nThe integration with Konqueror will be disabled.");
-                KMessageBox::detailedSorry(nullptr, errMsg, errMsgEx);
+                KMessageBox::detailedError(nullptr, errMsg, errMsgEx);
                 cfg.writePathEntry("DownloadManager", QString());
                 cfg.sync();
             } else {
